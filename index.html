@@ -26,7 +26,7 @@
 
 </head>
 <body class="shop home-page">
-<body oncontextmenu=”return false;” >
+
 	<!-- Side Navigation Menu -->
 	<aside class="side-navigation-wrapper enter-right one-page-nav" data-no-scrollbar data-animation="scale-in">
 		<div class="side-navigation-scroll-pane">
@@ -591,5 +591,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
 	<script src="js/timber.master.min.js"></script>
+    <script>
+        
+        document.oncontextmenu = function(e){
+            var target = (typeof e !="undefined")? e.target: event.srcElement
+            if (target.tagName == "IMG" || (target.tagName == 'A' && target.firstChild.tagName == 'IMG'))
+            return false
+            
+        }
+    
+        </script>
 </body>
 </html>
