@@ -599,15 +599,19 @@ UXStudio is a Customer focussed, Innovation and Design service firm, catering to
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
 	<script src="js/timber.master.min.js"></script>
-    <script>
-        
-        document.oncontextmenu = function(e){
-            var target = (typeof e !="undefined")? e.target: event.srcElement
-            if (target.tagName == "IMG" || (target.tagName == 'A' && target.firstChild.tagName == 'IMG'))
-            return false
-            
-        }
-    
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                          //Disable cut copy paste
+                          $('body').bind('cut copy paste', function (e) {
+                                         e.preventDefault();
+                                         });
+                          
+                          //Disable mouse right click
+                          $("body").on("contextmenu",function(e){
+                                       return false;
+                                       });
+                          });
         </script>
 </body>
 </html>
